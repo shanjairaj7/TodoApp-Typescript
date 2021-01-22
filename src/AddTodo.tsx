@@ -1,0 +1,36 @@
+import React, { useState } from "react";
+import { v4 as uuid } from "uuid";
+import { Input, Space } from "antd";
+const { Search } = Input;
+
+interface AddTodoProps {
+  addTodo: addTodo;
+}
+
+export const AddTodo: React.FC<AddTodoProps> = ({ addTodo }) => {
+  const [todo, setTodo] = useState("");
+
+  const buttonSubmit = () => {
+    addTodo({
+      id: uuid(),
+      text: todo,
+      completed: false,
+    });
+    setTodo("");
+  };
+
+  return (
+    <div>
+      <Space direction="vertical">
+        <Search
+          size="large"
+          value={todo}
+          onChange={(e) => setTodo(e.target.value)}
+          enterButton="Add Todo"
+          placeholder="Enter a ToDo"
+          onSearch={(e) => buttonSubmit()}
+        />
+      </Space>
+    </div>
+  );
+};
