@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Input, Space } from "antd";
-const { Search } = Input;
+import { Typography } from "antd";
 
+const { Search } = Input;
+const { Title } = Typography;
+
+// Props for this component
 interface UpdateTodoProps {
   todoToUpdate: Todo;
   udpateTodo: updateTodo;
@@ -21,7 +25,8 @@ export const UpdateTodo: React.FC<UpdateTodoProps> = ({
   }, [todoToUpdate]);
 
   return (
-    <Space>
+    <Space direction="horizontal">
+      <Title level={3}>Update your todo</Title>
       <Search
         size="middle"
         enterButton="Update todo"

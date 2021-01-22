@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { Input, Space } from "antd";
+import Title from "antd/lib/typography/Title";
 const { Search } = Input;
 
+// Props for this component
 interface AddTodoProps {
   addTodo: addTodo;
 }
@@ -10,6 +12,7 @@ interface AddTodoProps {
 export const AddTodo: React.FC<AddTodoProps> = ({ addTodo }) => {
   const [todo, setTodo] = useState("");
 
+  // Function to call the addTodo function in App.tsx
   const buttonSubmit = () => {
     addTodo({
       id: uuid(),
@@ -27,7 +30,7 @@ export const AddTodo: React.FC<AddTodoProps> = ({ addTodo }) => {
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
           enterButton="Add Todo"
-          placeholder="Enter a ToDo"
+          placeholder="Add a new ToDo"
           onSearch={(e) => buttonSubmit()}
         />
       </Space>

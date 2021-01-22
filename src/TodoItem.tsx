@@ -6,6 +6,7 @@ import { Button, Input, Space } from "antd";
 import Text from "antd/lib/typography/Text";
 import { UpdateTodo } from "./UpdateTodo";
 
+// Props for this component
 interface TodoItemProps {
   todo: Todo;
   toggleTodo: toggleTodo;

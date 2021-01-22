@@ -1,6 +1,7 @@
 import React from "react";
 import { TodoItem } from "./TodoItem";
 
+// Props for this component
 interface TodoListItemProps {
   todos: Array<Todo>;
   toggleTodo: toggleTodo;
